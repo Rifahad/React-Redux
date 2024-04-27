@@ -1,8 +1,9 @@
+import { useState } from "react";
+import './Productlist.css'
 import products from "../../api/Products.json";
 import  BeforeCart from "./CartButtons/BeforeCart";
 import AfterCart from "./CartButtons/AfterCart";
-import './Productlist.css'
-import { useState } from "react";
+import { useSelector } from "react-redux";
 
 function ProductList() {
    const [count, setCount]=useState(0);

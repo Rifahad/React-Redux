@@ -23,10 +23,10 @@ const cartSlice =createSlice({
         addToCart:(state)=>{
             state.cartCount = 1
         },
-        increment:()=>{
+        increment:(state)=>{
             state.cartCount += 1
         },
-        decrement:()=>{
+        decrement:(state)=>{
             state.cartCount -= 1
         },
     }

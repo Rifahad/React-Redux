@@ -1,6 +1,6 @@
 :root {
     --transition: all 0.2s ease-in-out;
-    --bg-circles: rgb(255, 163, 57);
+    --bg-circles:#d2bea5;
 }
 
 section {
@@ -12,7 +12,7 @@ section {
 .product-container {
     max-width: 300px;
     margin-top: 100px;
-    background-color: #27293d;
+    background-color: black;
     position: relative;
     display: flex;
     flex-direction: column;

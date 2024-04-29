@@ -20,14 +20,28 @@ const cartSlice =createSlice({
     name:'cart',
     initialState:INITIAL_STATE,
     reducers:{
-        addToCart:(state)=>{
-            state.cartCount = 1
+        addToCart:(state,action)=>{
+            state.cartList.push({
+                ...action.payload,
+                count:1
+            })
+
         },
-        increment:(state)=>{
-            state.cartCount += 1
+        increment:(state,action)=>{
+          const productID= action.payload
+          state.cartList.forEach((item)=>{
+            if (item?.id === productID) {
+                item.count++;
+            }
+          })
         },
-        decrement:(state)=>{
-            state.cartCount -= 1
+        decrement:(state,action)=>{
+            const productID= action.payload
+            state.cartList.forEach((item)=>{
+              if (item?.id === productID) {
+                  item.count--;
+              }
+            })
         },
     }
 })

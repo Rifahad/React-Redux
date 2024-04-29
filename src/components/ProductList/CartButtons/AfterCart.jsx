@@ -3,16 +3,14 @@ import './CartButton.css'
 import {  decrement, increment } from "../../../redux/Cart";
 
 
-function AfterCart() {
-  const {cartCount} = useSelector((state) =>state.cart)
+function AfterCart({cartCount, productID}) {
   const dispatch=useDispatch()
-
-
+  
   return (
     <div className='after-cart'>
-        <button className='cart-counter-button' onClick={()=> dispatch(decrement())}>-</button>
+        <button className='cart-counter-button' onClick={()=> dispatch(decrement(productID))}>-</button>
       <div className='cart-count'>{cartCount}</div>
-      <button className='cart-counter-button' onClick={()=>dispatch(increment())}>+</button>
+      <button className='cart-counter-button' onClick={()=>dispatch(increment(productID))}>+</button>
     </div>
   )
 }
